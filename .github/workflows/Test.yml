@@ -20,8 +20,8 @@ jobs:
         submodules: recursive
     - name: Checkout master on all submodules
       run: |
-        git pull --recurse-submodules
         git submodule set-branch -b dev app
-        git submodule update --remote --recursive --checkout
+        git submodule update --remote --recursive --checkout app
+        git submodule update --remote --recursive --checkout api_test
     - name: Start containers
       run: docker-compose -f "docker-compose-test.yml" up -d --build
