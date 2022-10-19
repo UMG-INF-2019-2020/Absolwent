@@ -21,7 +21,6 @@ jobs:
     - name: Pull & update submodules recursively
       run: |
         git submodule sync
-        git submodule update --init --recursive
         git submodule update --recursive --remote
         git submodule foreach git pull
     - name: Start containers
