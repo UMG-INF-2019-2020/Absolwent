@@ -20,6 +20,7 @@ jobs:
         submodules: recursive
     - name: Checkout master on all submodules
       run: |
+        git pull --recurse-submodules
         git submodule set-branch -b dev app
         git submodule update --remote --recursive --checkout
     - name: Start containers
