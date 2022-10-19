@@ -12,7 +12,7 @@ services:
   api_test:
     container_name: api_test
     build:
-      context: ./api_test/absolwent
+      context: ./api_test
       dockerfile: Dockerfile
       args:
         REACT_APP_API_URL: ${IP_ADDRESS_TEST}
