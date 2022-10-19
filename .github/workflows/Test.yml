@@ -20,7 +20,7 @@ jobs:
         submodules: true
     - name: Checkout master on all submodules
       run: |
-        cd api
+        cd app
         git checkout dev
         git pull origin dev
         cd ../
