@@ -2,9 +2,9 @@ version: "3.2"
 
 services:
   api_prod:
-    container_name: api-prod
+    container_name: app_prod
     build:
-      context: ./api
+      context: ./app
       args:
         REACT_APP_API_URL: ${IP_ADDRESS_PROD}
       dockerfile: Dockerfile
@@ -21,7 +21,7 @@ services:
     volumes:
       - /home/github/ssl:/ssl/
   db_prod:
-    container_name: db-prod
+    container_name: db_prod
     image: "mcr.microsoft.com/mssql/server:2022-latest"
     restart: unless-stopped
     ports:
