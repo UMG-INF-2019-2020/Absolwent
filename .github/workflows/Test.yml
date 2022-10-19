@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: self-hosted
     env:
-      DB_PASSWORD: ${{ secrets.DB_PASSWORD_TEST }}
+      DB_PASSWORD_TEST: ${{ secrets.DB_PASSWORD_TEST }}
       IP_ADDRESS_TEST: ${{ secrets.IP_ADDRESS_TEST }}
       API_SECRET_TEST: ${{secrets.API_SECRET_TEST}}
       API_DB_TEST: ${{secrets.API_DB_TEST}}
