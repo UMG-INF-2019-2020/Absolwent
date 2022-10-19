@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: self-hosted
     env:
-      DB_PASSWORD: ${{ secrets.DB_PASSWORD_PROD }}
+      DB_PASSWORD_PROD: ${{ secrets.DB_PASSWORD_PROD }}
       IP_ADDRESS_PROD: ${{ secrets.IP_ADDRESS_PROD }}
     steps:
     - name: Checkout
