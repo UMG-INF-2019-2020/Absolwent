@@ -1,0 +1,20 @@
+name: CI/CD TEST
+
+on:
+  push:
+    branches: [ "test" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: self-hosted
+    env:
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD_TEST }}
+      IP_ADDRESS_TEST: ${{ secrets.IP_ADDRESS_TEST }}
+      API_SECRET_TEST: ${{secrets.API_SECRET_TEST}}
+      API_DB_TEST: ${{secrets.API_DB_TEST}}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Start containers
+      run: docker-compose -f "docker-compose-test.yml" up -d --build

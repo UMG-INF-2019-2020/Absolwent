@@ -1,0 +1,35 @@
+version: "3.2"
+
+services:
+  app_prod:
+    container_name: app-prod
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_URL: ${IP_ADDRESS_PROD}
+    restart: unless-stopped
+  proxy:
+    container_name: proxy
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /home/github/ssl:/ssl/
+  db_prod:
+    container_name: db-prod
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    restart: unless-stopped
+    ports:
+      - 20169:1433
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${DB_PASSWORD_PROD}
+      MSSQL_PID: "Express"
+    volumes:
+      - /home/github/db_prod/data:/var/opt/mssql/data
+      - /home/github/db_prod/log:/var/opt/mssql/log
