@@ -17,11 +17,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
       with:
-        submodules: true
-    - name: Checkout master on all submodules
-      run: |
-        git submodule set-branch -b dev app
-        git submodule update --remote --recursive --checkout app
-        git submodule update --remote --recursive --checkout api_test
+        submodules: recursive
     - name: Start containers
       run: docker-compose -f "docker-compose-test.yml" up -d --build
