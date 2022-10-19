@@ -9,9 +9,6 @@ services:
         REACT_APP_API_URL: ${IP_ADDRESS_PROD}
       dockerfile: Dockerfile
     restart: unless-stopped
-    ports:
-      - 80:80
-      - 443:443
   proxy:
     container_name: proxy
     build:
@@ -19,8 +16,8 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     ports:
-      - 2082:80
-      - 2087:443
+      - 80:80
+      - 443:443
     volumes:
       - /home/github/ssl:/ssl/
   db_prod:
