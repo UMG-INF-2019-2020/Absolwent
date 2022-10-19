@@ -22,7 +22,7 @@ jobs:
       run: |
         cd app
         git pull origin dev
-        git checkout dev
+        git checkout origin dev
         cd ../
     - name: Start containers
       run: docker-compose -f "docker-compose-test.yml" up -d --build
