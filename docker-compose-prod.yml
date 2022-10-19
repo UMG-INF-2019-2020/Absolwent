@@ -1,13 +1,13 @@
 version: "3.2"
 
 services:
-  app_prod:
-    container_name: app-prod
+  api_prod:
+    container_name: api-prod
     build:
-      context: ./app
-      dockerfile: Dockerfile
+      context: ./api
       args:
         REACT_APP_API_URL: ${IP_ADDRESS_PROD}
+      dockerfile: Dockerfile
     restart: unless-stopped
   proxy:
     container_name: proxy
