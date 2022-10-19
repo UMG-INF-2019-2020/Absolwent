@@ -21,7 +21,6 @@ jobs:
     - name: Pull & update submodules recursively
       run: |
         git submodule sync
-        git submodule update --remote
         git submodule foreach git pull
     - name: Start containers
       run: docker-compose -f "docker-compose-test.yml" up -d --build
