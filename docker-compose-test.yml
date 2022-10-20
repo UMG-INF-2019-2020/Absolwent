@@ -18,7 +18,7 @@ services:
         REACT_APP_API_URL: ${IP_ADDRESS_TEST}
     restart: unless-stopped
     environment:
-      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_ENVIRONMENT=Development
       AppSettings__Secret: ${API_SECRET_TEST}
       ConnectionStrings__Absolwent: ${API_DB_TEST}
   db_test:
