@@ -16,6 +16,7 @@ services:
       dockerfile: Dockerfile
       args:
         REACT_APP_API_URL: ${IP_ADDRESS_TEST}
+        ENVIRONMENT: 
     restart: unless-stopped
     environment:
       ASPNETCORE_ENVIRONMENT=Development
