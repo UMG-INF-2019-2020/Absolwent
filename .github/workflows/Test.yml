@@ -44,6 +44,7 @@ jobs:
       DB_PASSWORD_TEST: ${{ secrets.DB_PASSWORD_TEST }}
       IP_ADDRESS_TEST: ${{ secrets.IP_ADDRESS_TEST }}
       API_SECRET_TEST: ${{secrets.API_SECRET_TEST}}
+      API_MAIL_PASSWORD_TEST: ${{secrets.API_MAIL_PASSWORD_TEST}}
       API_DB_TEST: ${{secrets.API_DB_TEST}}
     steps:
     - name: Checkout
