@@ -24,6 +24,7 @@ jobs:
     # Update references
     - name: Git Sumbodule Update
       run: |
+        git submodule foreach git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
         git fetch origin --recurse-submodules
         git checkout test --recurse-submodules
         git pull --recurse-submodules
