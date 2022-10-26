@@ -24,12 +24,10 @@ jobs:
     # Update references
     - name: Git Sumbodule Update
       run: |
-        git fetch origin
-        git checkout test
-        git submodule set-branch --branch test app
-        git submodule set-branch --branch test api_test
+        git fetch origin --recurse-submodules
+        git checkout test --recurse-submodules
         git pull --recurse-submodules
-        git submodule update --recursive
+        git submodule update --recursive --remote
 
     - name: Commit update
       run: |
