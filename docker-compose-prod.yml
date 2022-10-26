@@ -9,6 +9,12 @@ services:
         REACT_APP_API_URL: ${IP_ADDRESS_PROD}
       dockerfile: Dockerfile
     restart: unless-stopped
+  api_prod:
+    container_name: api_prod
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    restart: unless-stopped
   proxy:
     container_name: proxy
     build:

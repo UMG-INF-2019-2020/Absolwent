@@ -6,3 +6,7 @@
 	path = api_test
 	url = https://github.com/MPenk/absolwent-api-test.git
 	branch = test
+[submodule "api"]
+	path = api
+	url = https://github.com/MG9944/absolvent_backend.git
+	branch = main
