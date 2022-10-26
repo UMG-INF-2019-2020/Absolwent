@@ -27,7 +27,7 @@ jobs:
     - name: Git Sumbodule Update
       run: |
         git fetch origin
-        git checkout dev
+        git checkout test
         git pull --recurse-submodules
         git submodule update --remote --recursive
 
