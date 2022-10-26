@@ -1,8 +1,8 @@
 [submodule "app"]
 	path = app
 	url = https://github.com/MPenk/absolwent.git
-	branch = main
+	branch = test
 [submodule "api_test"]
 	path = api_test
 	url = https://github.com/MPenk/absolwent-api-test.git
-	branch = main
+	branch = test
