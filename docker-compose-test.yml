@@ -19,6 +19,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       AppSettings__Secret: ${API_SECRET_TEST}
+      AppSettings__MailPassword: ${API_MAIL_PASSWORD_TEST}
       ConnectionStrings__Absolwent: ${API_DB_TEST}
   db_test:
     container_name: db_test
