@@ -1,4 +1,4 @@
-name: CI/CD TEST
+name: Test
 
 on:
   workflow_dispatch:
