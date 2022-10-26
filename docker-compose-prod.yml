@@ -7,6 +7,7 @@ services:
       context: ./app
       args:
         REACT_APP_API_URL: ${IP_ADDRESS_PROD}
+        REACT_APP_ENVIRONMENT: Test
       dockerfile: Dockerfile
     restart: unless-stopped
   api_prod:
