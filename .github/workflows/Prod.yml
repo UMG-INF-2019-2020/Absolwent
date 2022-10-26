@@ -1,4 +1,4 @@
-name: CI/CD PROD
+name: Prod
 
 on:
   workflow_dispatch:
@@ -29,6 +29,7 @@ jobs:
         git checkout main --recurse-submodules
         git pull --recurse-submodules
         git submodule update --recursive --remote
+        
     - name: Commit update
       run: |
         git config --global user.name 'Git bot'
