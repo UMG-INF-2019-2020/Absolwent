@@ -29,7 +29,7 @@ jobs:
         git submodule set-branch --branch test app
         git submodule set-branch --branch test api_test
         git pull --recurse-submodules
-        git submodule update --remote --recursive
+        git submodule update --recursive
 
     - name: Commit update
       run: |
