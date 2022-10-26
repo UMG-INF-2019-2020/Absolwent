@@ -7,7 +7,7 @@ on:
 
 jobs:
   sync:
-    name: 'Submodules Sync'
+    name: 'Submodules_Sync'
     runs-on: self-hosted
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
@@ -26,7 +26,8 @@ jobs:
     # Update references
     - name: Git Sumbodule Update
       run: |
-        git checkout origin/dev
+        git fetch origin
+        git checkout dev
         git pull --recurse-submodules
         git submodule update --remote --recursive
 
@@ -39,6 +40,7 @@ jobs:
         
   build:
     runs-on: self-hosted
+    needs: sync
     env:
       DB_PASSWORD_TEST: ${{ secrets.DB_PASSWORD_TEST }}
       IP_ADDRESS_TEST: ${{ secrets.IP_ADDRESS_TEST }}
