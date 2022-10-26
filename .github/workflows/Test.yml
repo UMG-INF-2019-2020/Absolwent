@@ -28,6 +28,8 @@ jobs:
       run: |
         git fetch origin
         git checkout test
+        git submodule set-branch --branch main app
+        git submodule set-branch --branch main api_test
         git pull --recurse-submodules
         git submodule update --remote --recursive
 
