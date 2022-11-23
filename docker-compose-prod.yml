@@ -11,7 +11,7 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
   api_prod:
-    container_name: api_prod
+    container_name: api-prod
     build:
       context: ./api
       dockerfile: Dockerfile
