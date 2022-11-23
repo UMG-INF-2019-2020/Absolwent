@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   app_test:
-    container_name: app_test
+    container_name: app-test
     build:
       context: ./app
       args:
@@ -11,7 +11,7 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
   api_test:
-    container_name: api_test
+    container_name: api-test
     build:
       context: ./api_test
       dockerfile: Dockerfile
@@ -22,7 +22,7 @@ services:
       AppSettings__MailPassword: ${API_MAIL_PASSWORD_TEST}
       ConnectionStrings__Absolwent: ${API_DB_TEST}
   db_test:
-    container_name: db_test
+    container_name: db-test
     image: "mcr.microsoft.com/mssql/server:2022-latest"
     restart: unless-stopped
     ports:
