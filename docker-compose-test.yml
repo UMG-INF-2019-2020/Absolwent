@@ -1,7 +1,7 @@
 version: "3.2"
 
 services:
-  app_test:
+  app-test:
     container_name: app-test
     build:
       context: ./app
@@ -10,7 +10,7 @@ services:
         REACT_APP_ENVIRONMENT: Test
       dockerfile: Dockerfile
     restart: unless-stopped
-  api_test:
+  api-test:
     container_name: api-test
     build:
       context: ./api_test
@@ -21,7 +21,7 @@ services:
       AppSettings__Secret: ${API_SECRET_TEST}
       AppSettings__MailPassword: ${API_MAIL_PASSWORD_TEST}
       ConnectionStrings__Absolwent: ${API_DB_TEST}
-  db_test:
+  db-test:
     container_name: db-test
     image: "mcr.microsoft.com/mssql/server:2022-latest"
     restart: unless-stopped
