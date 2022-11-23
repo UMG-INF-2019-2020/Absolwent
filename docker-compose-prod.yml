@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   app_prod:
-    container_name: app_prod
+    container_name: app-prod
     build:
       context: ./app
       args:
