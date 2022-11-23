@@ -1,7 +1,7 @@
 version: "3.2"
 
 services:
-  app_prod:
+  app-prod:
     container_name: app-prod
     build:
       context: ./app
@@ -10,7 +10,7 @@ services:
         REACT_APP_ENVIRONMENT: Prod
       dockerfile: Dockerfile
     restart: unless-stopped
-  api_prod:
+  api-prod:
     container_name: api-prod
     build:
       context: ./api
