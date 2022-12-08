@@ -1,7 +1,7 @@
 [submodule "app"]
 	path = app
 	url = https://github.com/MPenk/absolwent.git
-	branch = test
+	branch = main
 [submodule "api_test"]
 	path = api_test
 	url = https://github.com/MPenk/absolwent-api-test.git
@@ -10,3 +10,7 @@
 	path = api
 	url = https://github.com/MG9944/absolvent_backend.git
 	branch = main
+[submodule "app_test"]
+	path = app_test
+	url = https://github.com/UMG-INF-2019-2020/Absolwent.git
+	branch = test

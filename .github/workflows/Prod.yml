@@ -24,10 +24,7 @@ jobs:
     # Update references
     - name: Git Sumbodule Update
       run: |
-        git submodule foreach git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
-        git fetch origin --recurse-submodules
-        git checkout main --recurse-submodules
-        git pull --recurse-submodules
+        git submodule update --remote
         
     - name: Commit update
       run: |
@@ -42,6 +39,11 @@ jobs:
     env:
       DB_PASSWORD_PROD: ${{ secrets.DB_PASSWORD_PROD }}
       IP_ADDRESS_PROD: ${{ secrets.IP_ADDRESS_PROD }}
+      DB_PASSWORD_TEST: ${{ secrets.DB_PASSWORD_TEST }}
+      IP_ADDRESS_TEST: ${{ secrets.IP_ADDRESS_TEST }}
+      API_SECRET_TEST: ${{secrets.API_SECRET_TEST}}
+      API_MAIL_PASSWORD_TEST: ${{secrets.API_MAIL_PASSWORD_TEST}}
+      API_DB_TEST: ${{secrets.API_DB_TEST}}
     steps:
     - name: Checkout
       uses: actions/checkout@v3

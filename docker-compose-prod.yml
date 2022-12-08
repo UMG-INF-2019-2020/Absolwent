@@ -1,6 +1,39 @@
 version: "3.2"
 
 services:
+ app-test:
+    container_name: app-test
+    build:
+      context: ./app
+      args:
+        REACT_APP_API_URL: ${IP_ADDRESS_TEST}
+        REACT_APP_ENVIRONMENT: Test
+      dockerfile: Dockerfile
+    restart: unless-stopped
+  api-test:
+    container_name: api-test
+    build:
+      context: ./api_test
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      AppSettings__Secret: ${API_SECRET_TEST}
+      AppSettings__MailPassword: ${API_MAIL_PASSWORD_TEST}
+      ConnectionStrings__Absolwent: ${API_DB_TEST}
+  db-test:
+    container_name: db-test
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    restart: unless-stopped
+    ports:
+      - 30169:1433
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${DB_PASSWORD_TEST}
+      MSSQL_PID: "Express"
+    volumes:
+      - /home/github/db_test/data:/var/opt/mssql/data
+      - /home/github/db_test/log:/var/opt/mssql/log
   app-prod:
     container_name: app-prod
     build:
