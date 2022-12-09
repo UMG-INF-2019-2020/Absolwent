@@ -12,5 +12,5 @@
 	branch = main
 [submodule "app_test"]
 	path = app_test
-	url = https://github.com/UMG-INF-2019-2020/Absolwent.git
+	url = https://github.com/MPenk/absolwent.git
 	branch = test

@@ -15,6 +15,12 @@ jobs:
 
     steps:
     # Checkout the repository to the GitHub Actions runner
+    - name: 'Cleanup build folder'
+      run: |
+        ls -la ./
+        rm -rf ./* || true
+        rm -rf ./.??* || true
+        ls -la ./
     - name: Checkout
       uses: actions/checkout@v3
       with:
@@ -24,6 +30,7 @@ jobs:
     # Update references
     - name: Git Sumbodule Update
       run: |
+        git submodule update --init
         git submodule update --remote
         
     - name: Commit update
