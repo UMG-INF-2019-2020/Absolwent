@@ -49,6 +49,8 @@ services:
       context: ./api
       dockerfile: Dockerfile
     restart: unless-stopped
+    labels:
+      io.portainer.accesscontrol.users: backend
   proxy:
     container_name: proxy
     build:
