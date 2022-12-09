@@ -50,10 +50,5 @@ jobs:
       API_MAIL_PASSWORD_TEST: ${{secrets.API_MAIL_PASSWORD_TEST}}
       API_DB_TEST: ${{secrets.API_DB_TEST}}
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-      with:
-        submodules: true
-        ref: main
     - name: Start containers
       run: docker-compose -f "docker-compose-prod.yml" up -d --build
