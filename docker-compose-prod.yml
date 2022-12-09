@@ -4,7 +4,7 @@ services:
   app-test:
     container_name: app-test
     build:
-      context: ./app
+      context: ./app_test
       args:
         REACT_APP_API_URL: ${IP_ADDRESS_TEST}
         REACT_APP_ENVIRONMENT: Test
